@@ -1,24 +1,72 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column            | Type   | Options     |
+| --------          | ------ | ----------- |
+| birsthday         | string | null: false |
+| email             | string | null: false |
+| password          | string | null: false |
+| firstname         | string | null: false |
+| familyname        | text   | null: false |
+| firstname_kana    | text   | null: false |
+| familyname_kana   | text   | null: false |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :items
+- has_one :get_point
+- has_many :buy_records
 
-* Configuration
 
-* Database creation
+## items テーブル
 
-* Database initialization
+| Column            | Type         | Options     |
+| --------          | ------       | ----------- |
+| image             |              |             |
+| item_name         | string       | null: false |
+| item_feature      | text         | null: false |
+| item_category     | text         | null: false |
+| item_used         | text         | null: false |
+| ship_charges      | text         | null: false |
+| shipper_erea      | string       | null: false |
+| item_cost         | string       | null: false |
+| owner             | text         | null: false |
+| user              | references   |             |
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
+- belong_to :user
+- has_one :buy_record
 
-* Deployment instructions
 
-* ...
+
+## get_points テーブル
+
+| Column             | Type       | Options     |
+| ------             | ---------- | ------------|
+| post_number        | string     | null: false |
+| adress_area        | string     | null: false |
+| adress_city        | text       | null: false |
+| adress_number      | text       | null: false |
+| phone_number       | string     | null: false |
+| users_id           | text       | null: false |
+
+
+### Association
+
+- belongs_to :user
+
+
+## buy_records テーブル
+
+| Column      | Type       | Options     |
+| ------      | ---------- | ------------|
+| custome     | text       | null: false |
+| user        | references |             |
+| item        | references |             |
+
+### Association
+
+- has_one :item
+- belongs_to :user
