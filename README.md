@@ -10,8 +10,8 @@
 | firstname             | string | null: false               |
 | familyname            | string | null: false               |
 | firstname_kana        | string | null: false               |
-| familyname_kana       | text   | null: false               |
-| nickname              | text   | null: false               | 
+| familyname_kana       | string | null: false               |
+| nickname              | string | null: false               | 
 
 ### Association
 
@@ -21,17 +21,16 @@
 
 ## items テーブル
 
-| Column               | Type         | Options     |
-| -------------------- | -----------  | ----------- |
-| image                |              |             |
-| name                 | string       | null: false |
-| item_feature_id      | intege       | null: false |
-| item_category_id     | intege       | null: false |
-| item_used_id         | intege       | null: false |
-| ship_charges_id      | intege       | null: false |
-| shipper_erea_id      | intege       | null: false |
-| item_cost            | string       | null: false |
-| user                 | references   |             |
+| Column               | Type         | Options            |
+| -------------------- | -----------  | -------------------|
+| name                 | string       | null: false        |
+| item_feature_id      | integer      | null: false        |
+| item_category_id     | integer      | null: false        |
+| item_used_id         | integer      | null: false        |
+| ship_charges_id      | integer      | null: false        |
+| adress_area_id       | integer      | null: false        |
+| item_cost_id         | integer      | null: false        |
+| user                 | references   | foreign_key: true  |
 
 ### Association
 
@@ -42,27 +41,29 @@
 
 ## get_points テーブル
 
-| Column             | Type       | Options     |
-| -----------------  | ---------- | ------------|
-| post_number        | string     | null: false |
-| adress_area        | string     | null: false |
-| adress_city        | string     | null: false |
-| adress_number      | string     | null: false |
-| phone_number       | string     | null: false |
-| users_id           | text       | null: false |
+| Column             | Type       | Options            |
+| -----------------  | ---------- | -------------------|
+| post_number        | string     | null: false        |
+| adress_area_id     | integer    | null: false        |
+| adress_city        | string     | null: false        |
+| adress_number      | string     | null: false        |
+| adress_building    | string     | null: false        |
+| phone_number       | string     | null: false        |
+| user               | references | foreign_key: true  |
 
-
+- has_one :buy_record
+adress_building
 
 
 ## buy_records テーブル
 
-| Column      | Type       | Options     |
-| ----------- | ---------- | ------------|
-| custome     | text       | null: false |
-| user        | references |             |
-| item        | references |             |
+| Column      | Type       | Options              |
+| ----------- | ---------- | ---------------------|
+| user        | references | foreign_key: true    |
+| item        | references | foreign_key: true    |
 
 ### Association
 
 - has_one :item
 - belongs_to :user
+- has_one :get point
