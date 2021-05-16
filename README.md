@@ -24,12 +24,13 @@
 | Column               | Type         | Options            |
 | -------------------- | -----------  | -------------------|
 | name                 | string       | null: false        |
-| item_feature_id      | integer      | null: false        |
+| feature              | text         | null: false        |
 | item_category_id     | integer      | null: false        |
-| item_used_id         | integer      | null: false        |
+| status_id            | integer      | null: false        |
 | ship_charges_id      | integer      | null: false        |
+| ship_time_id         | integer      | null: false        |
 | adress_area_id       | integer      | null: false        |
-| item_cost_id         | integer      | null: false        |
+| item_cost_id         | text         | null: false        |
 | user                 | references   | foreign_key: true  |
 
 ### Association
@@ -47,12 +48,12 @@
 | adress_area_id     | integer    | null: false        |
 | adress_city        | string     | null: false        |
 | adress_number      | string     | null: false        |
-| adress_building    | string     | null: false        |
+| adress_building    | string     |                    |
 | phone_number       | string     | null: false        |
-| user               | references | foreign_key: true  |
+| buy_record         | references | foreign_key: true  |
 
-- has_one :buy_record
-adress_building
+- belongs_to :buy_record
+
 
 
 ## buy_records テーブル
@@ -64,6 +65,6 @@ adress_building
 
 ### Association
 
-- has_one :item
+- belongs_to :item
 - belongs_to :user
-- has_one :get point
+- has_one :get_point
