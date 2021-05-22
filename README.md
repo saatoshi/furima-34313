@@ -1,24 +1,70 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column                | Type   | Options                   |
+| -----------------     | ------ | -----------------------   |
+| birthday             | date   | null: false               |
+| email                 | string | null: false, unique: true |
+| encrypted_password    | string | null: false, default: ""  |  
+| firstname             | string | null: false               |
+| familyname            | string | null: false               |
+| firstname_kana        | string | null: false               |
+| familyname_kana       | string | null: false               |
+| nickname              | string | null: false               | 
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :items
+- has_many :buy_records
 
-* Configuration
 
-* Database creation
+## items テーブル
 
-* Database initialization
+| Column               | Type         | Options            |
+| -------------------- | -----------  | -------------------|
+| name                 | string       | null: false        |
+| feature              | text         | null: false        |
+| item_category_id     | integer      | null: false        |
+| status_id            | integer      | null: false        |
+| ship_charge_id       | integer      | null: false        |
+| ship_time_id         | integer      | null: false        |
+| adress_area_id       | integer      | null: false        |
+| item_cost            | integer      | null: false        |
+| user                 | references   | foreign_key: true  |
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
+- belong_to :user
+- has_one :buy_record
 
-* Deployment instructions
 
-* ...
+
+## get_points テーブル
+
+| Column              | Type       | Options            |
+| -----------------   | ---------- | -------------------|
+| post_number         | string     | null: false        |
+| address_area_id     | integer    | null: false        |
+| address_city        | string     | null: false        |
+| address_number      | string     | null: false        |
+| address_building    | string     |                    |
+| phone_number        | string     | null: false        |
+| buy_record          | references | foreign_key: true  |
+
+- belongs_to :buy_record
+
+
+
+## buy_records テーブル
+
+| Column      | Type       | Options              |
+| ----------- | ---------- | ---------------------|
+| user        | references | foreign_key: true    |
+| item        | references | foreign_key: true    |
+
+### Association
+
+- belongs_to :item
+- belongs_to :user
+- has_one :get_point
