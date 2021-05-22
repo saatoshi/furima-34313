@@ -102,7 +102,7 @@
                 <mxCell id="155" value="address_number" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=21;" parent="151" vertex="1">
                     <mxGeometry y="130" width="190" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="173" value="adress_building" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=21;" parent="151" vertex="1">
+                <mxCell id="173" value="address_building" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=21;" parent="151" vertex="1">
                     <mxGeometry y="160" width="190" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="156" value="phone_number" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=21;" parent="151" vertex="1">
