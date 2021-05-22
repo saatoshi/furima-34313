@@ -4,7 +4,7 @@
 
 | Column                | Type   | Options                   |
 | -----------------     | ------ | -----------------------   |
-| birsthday             | date   | null: false               |
+| birthday             | date   | null: false               |
 | email                 | string | null: false, unique: true |
 | encrypted_password    | string | null: false, default: ""  |  
 | firstname             | string | null: false               |
@@ -27,7 +27,7 @@
 | feature              | text         | null: false        |
 | item_category_id     | integer      | null: false        |
 | status_id            | integer      | null: false        |
-| ship_charges_id      | integer      | null: false        |
+| ship_charge_id       | integer      | null: false        |
 | ship_time_id         | integer      | null: false        |
 | adress_area_id       | integer      | null: false        |
 | item_cost            | integer      | null: false        |
@@ -42,15 +42,15 @@
 
 ## get_points テーブル
 
-| Column             | Type       | Options            |
-| -----------------  | ---------- | -------------------|
-| post_number        | string     | null: false        |
-| adress_area_id     | integer    | null: false        |
-| adress_city        | string     | null: false        |
-| adress_number      | string     | null: false        |
-| adress_building    | string     |                    |
-| phone_number       | string     | null: false        |
-| buy_record         | references | foreign_key: true  |
+| Column              | Type       | Options            |
+| -----------------   | ---------- | -------------------|
+| post_number         | string     | null: false        |
+| address_area_id     | integer    | null: false        |
+| address_city        | string     | null: false        |
+| address_number      | string     | null: false        |
+| address_building    | string     |                    |
+| phone_number        | string     | null: false        |
+| buy_record          | references | foreign_key: true  |
 
 - belongs_to :buy_record
 
