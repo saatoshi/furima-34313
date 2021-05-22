@@ -65,7 +65,7 @@
                 <mxCell id="131" value="item_cost" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=21;" vertex="1" parent="121">
                     <mxGeometry y="280" width="190" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="127" value="users_id" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=21;" vertex="1" parent="121">
+                <mxCell id="127" value="user_id" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=21;" vertex="1" parent="121">
                     <mxGeometry y="310" width="190" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="136" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmany;startArrow=ERone;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endSize=34;startFill=0;endFill=0;startSize=34;" edge="1" parent="1" target="124">
